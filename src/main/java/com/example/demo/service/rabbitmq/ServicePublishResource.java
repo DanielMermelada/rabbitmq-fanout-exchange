@@ -13,6 +13,6 @@ public class ServicePublishResource {
         this.rabbitTemplate = rabbitTemplate;
     }
     public void sendResource(String resource){
-        rabbitTemplate.convertAndSend("la fila","nexus",resource);
+        rabbitTemplate.convertAndSend("nucleusQueue","app",resource);
     }
 }

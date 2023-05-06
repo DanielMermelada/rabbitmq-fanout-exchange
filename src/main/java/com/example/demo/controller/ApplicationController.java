@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.service.rabbitmq.ServicePublishResource;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -14,7 +15,7 @@ public class ApplicationController {
     }
 
     @GetMapping(path = "/send-resource/{resource}")
-    public void sendResource(String resource){
-
+    public void sendResource(@PathVariable String resource){
+        servicePublishResource.sendResource(resource);
     }
 }

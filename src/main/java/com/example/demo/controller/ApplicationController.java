@@ -15,7 +15,18 @@ public class ApplicationController {
     }
 
     @GetMapping(path = "/send-resource/{resource}")
-    public void sendResource(@PathVariable String resource){
+    void sendResource(@PathVariable String resource){
         servicePublishResource.sendResource(resource);
     }
+
+    @GetMapping(path = "/send-instructions/{instructions}")
+    void sendInstructions(@PathVariable String instructions){
+        servicePublishResource.sendInstructions(instructions);
+    }
+    @GetMapping(path = "/send-error/{error}")
+    void sendError(@PathVariable String error){
+        servicePublishResource.sendError(error);}
+    @GetMapping(path = "/send-confirmation/{confirmation}")
+    void sendConfirmation(@PathVariable String confirmation){
+        servicePublishResource.sendConfirmation(confirmation);}
 }
